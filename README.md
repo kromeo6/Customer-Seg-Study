@@ -23,6 +23,6 @@ This analysis consists of several key steps:
 3. **Training the Model**: Developing and training the clustering model using the selected features.
 
 
-Switching to the `mlops` branch will provide you with a simple MLOps setup for training pipelines on Azure.
+Switching to the `mlops` branch will provide you with a simple MLOps setup for training pipeline on Azure.
 
 
