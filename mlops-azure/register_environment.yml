@@ -1,0 +1,31 @@
+trigger: none
+
+name: 'customer_segm_env_pipeline'
+jobs:
+  - job: 'env_pipeline_job'
+    pool:
+      vmImage: 'ubuntu-latest'
+    variables:
+      - group: TestVars
+#      - group: KeyVault
+    steps:
+      - checkout: self
+        path: s/
+      - task: UsePythonVersion@0
+        inputs:
+          versionSpec: '3.9'
+          architecture: 'x64'
+      - script: |
+          pip install -r requirements.txt
+        displayName: 'Install requirements'
+    
+      - script: |
+          python src/mlops/environment.py
+        displayName: 'Register Environment'
+        env:
+          TENANT_ID: $(tenantid)
+          SP_ID: $(spid)
+          SP_VALUE: $(spvalue)
+          AML_WORKSPACE_NAME: $(wsname)
+          RESOURCE_GROUP: $(rg)
+          SUBSCRIPTION_ID: $(subscriptionid)
