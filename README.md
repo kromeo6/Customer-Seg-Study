@@ -5,6 +5,7 @@
 This repository contains customer data analysis. If you prefer to run the notebook, follow these steps:
 
 1. Create a virtual environment and install the required dependencies:
+   ```bash
    pip install -r requirements.txt
 
 2. Open the `Customer-Segmentation.ipynb` file to view and run the analysis.
