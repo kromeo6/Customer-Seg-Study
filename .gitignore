@@ -35,3 +35,4 @@ venv.bak/
 
 # idea folder, uncomment if you don't need it
 .idea
+.ipynb_checkpoints
